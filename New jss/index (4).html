@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head><meta charset="UTF-8"><title>Praktikum JavaScript</title></head>
+<body>
+    <h2>Praktikum Basic JavaScript</h2>
+    <p>Lihat hasil melalui Console (F12).</p>
+    <script>
+        // ===== Sesi 2: Output, Variabel, dan Tipe Data =====
+        {
+            console.group("Sesi 2: Variabel dan Tipe Data");
+            const nama = "Syamindera";
+            let umur = 19;
+            let nilai = 85;
+            let aktif = true;
+            const prodi = "Teknik Informatika"; // latihan modifikasi
+
+            console.log("Nama:", nama);
+            console.log("Umur:", umur);
+            console.log("Nilai:", nilai);
+            console.log("Status aktif:", aktif);
+            console.log("Tipe nilai:", typeof nilai);
+            console.log("Prodi:", prodi);
+            console.groupEnd();
+        }
+
+        // ===== Sesi 3: Operator dan Perhitungan Sederhana =====
+        {
+            console.group("Sesi 3: Operator");
+            const tugas = 80;
+            const uts = 75;
+            const uas = 90; // latihan: ganti jadi 50 lalu amati hasilnya
+            const akhir = tugas * 0.30 + uts * 0.30 + uas * 0.40;
+
+            console.log("Nilai akhir:", akhir);      // 82.5
+            console.log("Lulus:", akhir >= 60);      // true
+
+            // Mencoba operator
+            console.log("tugas + uts =", tugas + uts);
+            console.log("tugas - uts =", tugas - uts);
+            console.log("tugas * uts =", tugas * uts);
+            console.log("tugas / uts =", tugas / uts);
+            console.log("tugas % uts =", tugas % uts);
+            console.groupEnd();
+        }
+
+        // ===== Sesi 4: Percabangan if, else if, else =====
+        {
+            console.group("Sesi 4: Percabangan");
+            function tentukanKategori(nilai) {
+                if (nilai >= 85) {
+                    return "A";
+                } else if (nilai >= 70) {
+                    return "B";
+                } else if (nilai >= 60) {
+                    return "C";
+                } else {
+                    return "D";
+                }
+            }
+
+            // Contoh utama + latihan modifikasi
+            const daftarNilai = [78, 92, 65, 45];
+            for (const n of daftarNilai) {
+                console.log("Nilai:", n, "Kategori:", tentukanKategori(n));
+            }
+            console.groupEnd();
+        }
+
+        // ===== Sesi 5: Perulangan dan Fungsi Dasar =====
+        {
+            console.group("Sesi 5: Perulangan dan Fungsi");
+            function hitungDiskon(harga, persen) {
+                return harga - (harga * persen / 100);
+            }
+
+            for (let i = 1; i <= 3; i++) {
+                const harga = i * 10000;
+                const bayar = hitungDiskon(harga, 10);
+                console.log("Barang", i, "Harga:", harga, "Bayar:", bayar);
+            }
+            console.groupEnd();
+        }
+
+        // ===== D. Praktikum Mandiri: Pengolah Nilai Mahasiswa =====
+        {
+            console.group("Praktikum Mandiri: Pengolah Nilai Mahasiswa");
+            const nama = "Syamindera";
+            const tugas = 80;
+            const uts = 70;
+            const uas = 90;
+
+            const nilaiAkhir = tugas * 0.30 + uts * 0.30 + uas * 0.40;
+
+            let status;
+            if (nilaiAkhir >= 60) {
+                status = "LULUS";
+            } else {
+                status = "TIDAK LULUS";
+            }
+
+            console.log("Nama mahasiswa:", nama);
+            console.log("Nilai akhir:", nilaiAkhir);   // 81
+            console.log("Status kelulusan:", status);  // LULUS
+            console.groupEnd();
+        }
+    </script>
+</body>
+</html>
